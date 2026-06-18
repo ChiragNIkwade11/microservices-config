@@ -7,17 +7,17 @@ spring:
     gateway:
       routes:
         - id: auth-service
-          uri: 'lb://AUTH-SERVICE'
+          uri: http://localhost:8083
           predicates:
             - Path=/auth/**
         - id: product-service
-          uri: 'lb://PRODUCT-SERVICE'
+          uri: http://localhost:8081
           predicates:
             - Path=/products/**
           filters:
             - JwtAuthenticationFilter
         - id: order-service
-          uri: 'lb://ORDER-SERVICE'
+          uri: http://localhost:8082
           predicates:
             - Path=/orders/**
           filters:
