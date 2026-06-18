@@ -28,4 +28,5 @@ eureka:
       defaultZone: 'http://localhost:8761/eureka/'
 logging:
   level:
-    org.springframework.cloud.gateway: DEBUG
+    root: DEBUG
+    org.springframework.cloud.gateway: TRACE
