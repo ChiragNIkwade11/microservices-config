@@ -15,12 +15,11 @@ spring:
               uri: lb://AUTH-SERVICE
               predicates:
                 - Path=/auth/**
+                
             - id: search-service
               uri: lb://SEARCH-SERVICE
               predicates:
                 - Path=/search/**
-              filters:
-                - JwtAuthenticationFilter
 
             - id: product-service
               uri: lb://PRODUCT-SERVICE
